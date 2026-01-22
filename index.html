@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJ Production Support Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="logo">AJ</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+  <!-- Fallback image -->
+  <img src="images/hero-fallback.png" class="hero-fallback" alt="AJ Production">
+
+  <!-- Background video -->
+  <video id="heroVideo" autoplay muted loop playsinline>
+    <source src="videos/aj-hero.mp4" type="video/mp4">
+  </video>
+
+  <!-- Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <h1 class="hero-title">ajProduction</h1>
+    <h2 class="hero-subtitle">SUPPORT SERVICES</h2>
+    <p class="hero-tagline">For the Ultimate Creative Excellence</p>
+
+    <div class="buttons">
+      <a href="#" class="btn primary">Youtube Page</a>
+      <a href="#portfolio" class="btn outline">Watch More</a>
+    </div>
+  </div>
+
+  <!-- Sound toggle -->
+  <button id="soundToggle" class="sound-btn">🔇</button>
+
+</section>
+
+<section id="portfolio" class="section">
+  <div class="container">
+    <h2>Portfolio</h2>
+
+    <div class="video-grid">
+      <video controls src="videos/aj-hero.mp4"></video>
+      <video controls src="videos/aj-hero.mp4"></video>
+      <video controls src="videos/aj-hero.mp4"></video>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section light">
+  <div class="container">
+    <h2>About</h2>
+    <p>
+      AJ Production Support Services provides professional creative and production
+      assistance for brands, studios, and independent creators. We focus on clarity,
+      quality, and execution.
+    </p>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Contact</h2>
+
+    <form action="contact.php" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <button type="submit" class="btn primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  © 2026 AJ Production Support Services
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+  

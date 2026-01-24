@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJ Production Support Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Inter, sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero video,
+    .hero .fallback {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero video {
+      animation: zoomVideo 20s ease-in-out infinite;
+    }
+
+    @keyframes zoomVideo {
+      from { transform: scale(1); }
+      to   { transform: scale(1.1); }
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    /* CONTENT */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-content img {
+      width: 140px;
+      margin-bottom: 25px;
+      animation: logoFade 2.5s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes logoFade {
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: textIn 1.5s ease forwards;
+      animation-delay: 1.6s;
+    }
+
+    p {
+      font-size: 1.1rem;
+      opacity: 0;
+      animation: textIn 1.5s ease forwards;
+      animation-delay: 2.2s;
+    }
+
+    @keyframes textIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+    .cta {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border-radius: 30px;
+      background: #8c3b1f;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.3s ease;
+    }
+
+    .cta:hover {
+      background: #a94a28;
+    }
+
+    /* SOUND BUTTON */
+    .sound-btn {
+      position: absolute;
+      bottom: 25px;
+      right: 25px;
+      z-index: 3;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 10px 16px;
+      border-radius: 50px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero-content img {
+        width: 110px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- FALLBACK IMAGE -->
+    <img src="images/hero-fallback.png" class="fallback" alt="AJ Production">
+
+    <!-- BACKGROUND VIDEO -->
+    <video id="heroVideo" autoplay muted loop playsinline>
+      <source src="videos/aj-hero.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <!-- CONTENT -->
+    <div class="hero-content">
+      <!-- LOGO IMAGE -->
+      <img src="images/aj-logo.png" alt="AJ Logo">
+
+      <h1>AJ Production Support Services</h1>
+      <p>For the Ultimate Creative Excellence</p>
+
+      <a class="cta"
+         href="https://www.youtube.com/@ajproductiontv5050/videos"
+         target="_blank">
+         View Our Productions
+      </a>
+    </div>
+
+    <button class="sound-btn" id="soundToggle">Sound On</button>
+
+  </section>
+
+  <script>
+    const video = document.getElementById('heroVideo');
+    const btn = document.getElementById('soundToggle');
+
+    btn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      btn.textContent = video.muted ? 'Sound On' : 'Sound Off';
+    });
+  </script>
+
+</body>
+</html>
+
